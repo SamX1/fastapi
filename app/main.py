@@ -27,7 +27,7 @@ class HotelsSearchArgs:
 
 
 @app.get("/hotels")
-def get_hotels(seatch_arg: HotelsSearchArgs = Depends()) -> list[SHotel]:
+def get_hotels(search_arg: HotelsSearchArgs = Depends()) -> list[SHotel]:
     hotels = [
         {'address': "ул. Гагарина, 1, Алтай",
          'name': 'Super hotel',
