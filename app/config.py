@@ -1,5 +1,5 @@
 from pydantic_settings import BaseSettings
-from pydantic import model_validator, root_validator
+from pydantic import root_validator
 
 
 class Settings(BaseSettings):
@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     DB_USER: str
     DB_PASS: str
     DB_NAME: str
+    SECRET_KEY: str
+    ALGORITHM: str
 
     @root_validator(skip_on_failure=True)
     def get_database_url(cls, v):
